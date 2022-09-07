@@ -120,6 +120,6 @@ public final class Response {
     }
 
     private static String getUserAgent() {
-        return "Java-" + System.getProperty("java.version") + "-SDK-Sign-0.0.0";
+        return "Java-" + System.getProperty("java.version") + "-SDK-Sign-0.0.1";
     }
 }

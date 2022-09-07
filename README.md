@@ -58,7 +58,7 @@ and add it to your project.
 
 ```sh
 dependencies {
-  implementation 'com.starksign:sdk:0.0.0'
+  implementation 'com.starksign:sdk:0.0.1'
 }
 ```
 
@@ -68,7 +68,7 @@ dependencies {
 <dependency>
   <groupId>com.starksign</groupId>
   <artifactId>sdk</artifactId>
-  <version>0.0.0</version>
+  <version>0.0.1</version>
 </dependency>
 ```
 

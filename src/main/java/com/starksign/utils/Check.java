@@ -1,0 +1,43 @@
+package com.starksign.utils;
+
+import com.starksign.Settings;
+import com.starkbank.ellipticcurve.PrivateKey;
+
+import java.util.Arrays;
+
+
+public final class Check {
+    public static String key(String key) throws Exception {
+        int a=1;
+        try {
+            PrivateKey privateKey = PrivateKey.fromPem(key);
+            if (!privateKey.curve.name.equals("secp256k1")) {
+                throw new Exception();
+            }
+        } catch (Exception e) {
+            throw new Exception("privateKey must be valid secp256k1 ECDSA string in pem format");
+        }
+        return key;
+    }
+
+    public static String environment(String environment) throws Exception {
+        String[] validEnvironments = {"sandbox", "production"};
+        if (Arrays.asList(validEnvironments).contains(environment)){
+            return environment;
+        }
+        throw new Exception(
+            String.format("Invalid environment, please choose one among %s", Arrays.toString(validEnvironments))
+        );
+    }
+
+    public static String language() throws Exception {
+        String[] validLanguages = {"en-US", "pt-BR"};
+        String language = Settings.language;
+        if (Arrays.asList(validLanguages).contains(language)){
+            return language;
+        }
+        throw new Exception(
+            String.format("Invalid language, please choose one among %s", Arrays.toString(validLanguages))
+        );
+    }
+}
